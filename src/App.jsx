@@ -13,7 +13,7 @@ function App() {
   return (
     <main className=" bg-grey-900 h-screen w-full relative overflow-y-hidden">
       <NavBar />
-      <div className="  gap-6 relative mt-32">
+      <div className="flex gap-6 relative mt-32">
         <SideBar />
         <Feed />
         <Aside />

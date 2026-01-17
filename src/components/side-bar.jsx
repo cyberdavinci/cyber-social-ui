@@ -27,11 +27,11 @@ const SideBar = () => {
   };
 
   return (
-    <div className="flex-1  flex flex-col gap-5 text-gray-300 px-6 fixed w-[300px] bg-slate-800 py-4 rounded-tr-xl rounded-br-xl">
+    <div className="flex-1 flex flex-col gap-5 text-gray-300 px-6  bg-slate-800 py-4 rounded-tr-xl rounded-br-xl w-auto h-[100vh]">
       {menus.map((menu) => (
         <div
           key={menu.id}
-          className={`flex items-center gap-3 hover:bg-slate-800 p-4 max-w-[300px] rounded-4xl cursor-pointer ${
+          className={`flex items-center gap-3 hover:bg-slate-800 p-4 rounded-4xl cursor-pointer ${
             currentActive == menu.id && "bg-slate-700"
           }`}
           onClick={() => handleActive(menu)}
