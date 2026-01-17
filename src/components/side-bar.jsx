@@ -27,7 +27,7 @@ const SideBar = () => {
   };
 
   return (
-    <div className="flex-1 flex flex-col gap-5 text-gray-300 px-6  bg-slate-800 py-4 rounded-tr-xl rounded-br-xl w-auto h-[100vh]">
+    <div className="flex-1 flex flex-col gap-5 text-gray-300 px-6  bg-slate-800 py-4 rounded-tr-xl rounded-br-xl w-auto h-[100vh] overflow-y-auto">
       {menus.map((menu) => (
         <div
           key={menu.id}
