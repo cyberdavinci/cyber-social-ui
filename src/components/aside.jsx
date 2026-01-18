@@ -49,7 +49,7 @@ const Contact = ({ name, src, online }) => (
 
 const aside = () => {
   return (
-    <aside className="hidden xl:flex flex-col w-[340px] text-gray-300 p-2 mt-4 sticky top-[56px] h-[calc(80vh-56px)] overflow-y-auto custom-scrollbarbg-slate-800" >
+    <aside className="hidden md:flex flex-col flex-1  text-gray-300 p-2 mt-4 sticky top-[56px] h-[calc(80vh-56px)] overflow-y-auto custom-scrollbarbg-slate-800" >
       
       {/* --- SPONSORED SECTION --- */}
       <div className="mb-4 px-2">
