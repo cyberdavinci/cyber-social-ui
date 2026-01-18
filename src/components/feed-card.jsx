@@ -26,6 +26,8 @@ export const FeedCard = () => {
     "https://images.unsplash.com/photo-1500534623283-312aade485b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bmF0dXJlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
   ]);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isFollowed, setIsFollowed] = useState(false);
+  const [isLiked, setIsLiked] = useState(false);
 
   const postDescription =
     "Exploring the serene beauty of nature! 🌿✨ #NatureLover #PeacefulMoments, there's nothing quite like disconnecting from the hustle and bustle to reconnect with the earth. Every sunset, every mountain peak, every forest trail reminds me of how lucky we are to live on this incredible planet. 🌍💚 Taking time to appreciate these moments keeps me grounded and grateful. What's your favorite place to find peace in nature? Drop a comment below! 👇 #NaturePhotography #OutdoorAdventures #Wanderlust #TravelDiaries #EarthDay #NatureLovers #ExploreMore";
@@ -33,6 +35,18 @@ export const FeedCard = () => {
   const readMore = () => {
     setIsExpanded(!isExpanded);
   };
+
+  // toggle follow button
+  const toggleFollow = () => {
+    setIsFollowed(!isFollowed);
+  };
+
+// toggle like button
+const toggleLike = () => {
+  setIsLiked(!isLiked);
+};
+
+
   // face book style card design
   return (
     <Card className="w-full  mx-auto mb-6 bg-gray-800 text-white rounded-md border-none shadow-xl p-0">
@@ -52,9 +66,9 @@ export const FeedCard = () => {
                 <div className="w-[5px] h-[5px] rounded-full bg-amber-50"></div>
                 <Button
                   variant={"link"}
-                  className=" text-blue-500 font-semibold w-fit p-0 m-0 h-auto "
-                >
-                  Follow
+                  className=" text-blue-500 cursor-pointer font-semibold w-fit p-0 m-0 h-auto "
+               onClick={toggleFollow} >
+                  {isFollowed ? "Following" : "Follow"}
                 </Button>
               </div>
 
@@ -196,7 +210,7 @@ export const FeedCard = () => {
         </div>
         <div className="flex justify-around text-gray-300 items-center w-full pb-5">
           <div className="flex items-center gap-1 font-semibold cursor-pointer">
-            <ThumbsUp /> <span>Like</span>
+            <ThumbsUp onClick={toggleLike} className={isLiked ? "fill-blue-500" : ""} /> <span>{isLiked ? "Unlike" : "Like"}</span>
           </div>
           <div className="flex items-center gap-1 font-semibold cursor-pointer">
             <MessageCircle /> <span>Comment</span>
