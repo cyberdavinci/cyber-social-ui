@@ -10,13 +10,13 @@ import {
 import React, { useState } from "react";
 
 const menus = [
-  { id: 1, name: "Home", icon: <Home size={40} />, active: true },
-  { id: 2, name: "Users", icon: <UserCheck2Icon size={40} />, active: false },
-  { id: 3, name: "Groups", icon: <Users size={40} />, active: false },
-  { id: 4, name: "Pages", icon: <LucideListCheck size={40} />, active: false },
-  { id: 5, name: "Market Place", icon: <Store size={40} />, active: false },
-  { id: 6, name: "Profile", icon: <UserCircle size={40} />, active: false },
-  { id: 7, name: "Settings", icon: <Settings size={40} />, active: false },
+  { id: 1, name: "Home", icon: <Home size={35} />, active: true },
+  { id: 2, name: "Users", icon: <UserCheck2Icon size={35} />, active: false },
+  { id: 3, name: "Groups", icon: <Users size={35} />, active: false },
+  { id: 4, name: "Pages", icon: <LucideListCheck size={35} />, active: false },
+  { id: 5, name: "Market Place", icon: <Store size={35} />, active: false },
+  { id: 6, name: "Profile", icon: <UserCircle size={35} />, active: false },
+  { id: 7, name: "Settings", icon: <Settings size={35} />, active: false },
 ];
 
 const SideBar = () => {
@@ -27,7 +27,7 @@ const SideBar = () => {
   };
 
   return (
-    <div className="flex-1 flex flex-col gap-5 text-gray-300 px-6  bg-slate-800 py-4 rounded-tr-xl rounded-br-xl w-auto h-[100vh] overflow-y-auto">
+    <div className="flex-1 flex flex-col gap-5 text-gray-300 px-6  bg-slate-800 py-4 rounded-tr-xl rounded-br-xl w-auto h-[80vh] overflow-y-auto">
       {menus.map((menu) => (
         <div
           key={menu.id}
