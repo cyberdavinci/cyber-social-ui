@@ -14,10 +14,11 @@ import {
   MoreHorizontal,
   ThumbsUp,
   X,
+  UserCircle2
 } from "lucide-react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { Button } from "./ui/button";
-import { is } from "date-fns/locale/is";
+// import { is } from "date-fns/locale/is";
 
 export const FeedCard = () => {
   const [cardImages, setCardImages] = useState([
