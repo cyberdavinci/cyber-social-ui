@@ -8,13 +8,13 @@ const NavBar = () => {
     <div className=" bg-slate-800 p-6 text-white flex justify-between items-center fixed left-0 right-0 top-0 z-10">
       <h2 className="text-3xl font-bold">Cyber Davinci</h2>
 
-      <div className="flex items-center bg-gray-600 px-5 py-2 rounded-4xl min-w-6xl">
-        <Input
-          className="border-none outline-none focus:ring-0 focus:outline-none placeholder:text-gray-300"
-          placeholder="search...?"
-        />
-        <Search />
-      </div>
+      <div className="flex items-center justify-between bg-gray-600 px-5 py-2 rounded-full w-1/2 gap-3">
+  <Input
+    className="flex-1 bg-transparent border-none outline-none focus:ring-0 focus:outline-none placeholder:text-gray-300 text-white"
+    placeholder="search...?"
+  />
+  <Search />
+</div>
       <div className="flex gap-6">
         <div className=" relative">
           <Mail size={30} />
