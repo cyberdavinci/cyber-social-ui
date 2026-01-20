@@ -18,7 +18,7 @@ const groupChat = [
 
 // 1. Sponsored Ad Component
 const SponsoredAd = ({ image, title, domain }) => (
-  <div className="flex items-center space-x-3 p-2 hover:bg-gray-200 dark:hover:bg-[#3a3b3c] rounded-lg cursor-pointer transition-all">
+  <div className="flex items-center space-x-3 p-2 hover:bg-gray-600 dark:hover:bg-[#3a3b3c] rounded-lg cursor-pointer transition-all">
     <img src={image} className="rounded-lg w-[110px] h-[110px] object-cover" alt={title} />
     <div className="flex flex-col space-y-1">
       <h4 className="text-[15px] font-semibold  text-gray-300 dark:text-[#e4e6eb] leading-tight line-clamp-2">
@@ -34,7 +34,7 @@ const SponsoredAd = ({ image, title, domain }) => (
 
 // 2 Individual Contact Component (with Online Dot)
 const Contact = ({ name, src, online }) => (
-  <div className="flex items-center space-x-3 p-2 hover:bg-gray-200 dark:hover:bg-[#3a3b3c] rounded-lg cursor-pointer transition-all relative">
+  <div className="flex items-center space-x-3 p-2 hover:bg-gray-600 dark:hover:bg-[#3a3b3c] rounded-lg cursor-pointer transition-all relative">
     <div className="relative">
       <img src={src} className="rounded-full w-9 h-9 object-cover" alt={name} />
       {online && (
@@ -49,7 +49,7 @@ const Contact = ({ name, src, online }) => (
 
 const aside = () => {
   return (
-    <aside className="hidden xl:flex flex-col w-[340px] text-gray-300 p-2 mt-4 sticky top-[56px] h-[calc(80vh-56px)] overflow-y-auto custom-scrollbarbg-slate-800" >
+    <aside className="hidden md:flex  flex-1 flex-col  text-gray-300 p-2 mt-4 sticky top-[56px] h-[calc(80vh-56px)] overflow-y-auto custom-scrollbarbg-slate-800" >
       
       {/* --- SPONSORED SECTION --- */}
       <div className="mb-4 px-2">
@@ -70,7 +70,7 @@ const aside = () => {
       {/* --- BIRTHDAYS SECTION --- */}
       <div className="px-2 py-2  text-gray-30">
         <h3 className=" text-gray-30 dark:text-[#b0b3b8] font-semibold text-[17px] mb-2">Birthdays</h3>
-        <div className="flex items-center space-x-3 p-2 hover:bg-gray-200 dark:hover:bg-[#3a3b3c] rounded-lg cursor-pointer transition-all">
+        <div className="flex items-center space-x-3 p-2 hover:bg-gray-600 dark:hover:bg-[#3a3b3c] rounded-lg cursor-pointer transition-all">
           <FaGift className="text-[#1877f2] text-3xl shrink-0" />
           <p className="text-[15px]  text-gray-30 dark:text-[#e4e6eb]">
             <span className="font-bold">Modou L Sonko</span> and <span className="font-bold">4 others</span> have birthdays today.
@@ -85,8 +85,8 @@ const aside = () => {
         <div className="flex justify-between items-center mb-2 px-2">
           <h3 className=" text-gray-300 dark:text-[#b0b3b8] font-semibold text-[17px]">Contacts</h3>
           <div className="flex space-x-2  text-gray-300 dark:text-[#b0b3b8]">
-            <div className="p-2 hover:bg-gray-200 dark:hover:bg-[#3a3b3c] rounded-full cursor-pointer"><FaSearch size={14}/></div>
-            <div className="p-2 hover:bg-gray-200 dark:hover:bg-[#3a3b3c] rounded-full cursor-pointer"><FaEllipsisH size={14}/></div>
+            <div className="p-2 hover:bg-gray-600 dark:hover:bg-[#3a3b3c] rounded-full cursor-pointer"><FaSearch size={14}/></div>
+            <div className="p-2 hover:bg-gray-600 dark:hover:bg-[#3a3b3c] rounded-full cursor-pointer"><FaEllipsisH size={14}/></div>
           </div>
         </div>
 
@@ -108,7 +108,7 @@ const aside = () => {
       {communitys.map((communitys) => (
         <div
           key={communitys.id}
-          className='flex items-center gap-3 hover:bg-gray-100 p-4 rounded-4xl cursor-pointer font-semibold '>
+          className='flex items-center gap-3 hover:bg-gray-600 p-4 rounded-4xl cursor-pointer font-semibold '>
           {communitys.icon}  <span>{communitys.name}</span>
         </div>
       ))}
@@ -124,7 +124,7 @@ const aside = () => {
         <div
         
           key={groupChat.id}
-          className='flex items-center gap-3 hover:bg-gray-100 p-4 rounded-4xl cursor-pointer font-semibold '>
+          className='flex items-center gap-3 hover:bg-gray-600 p-4 rounded-4xl cursor-pointer font-semibold '>
             <img src="https://i.pravatar.cc/150?u=1" alt=""  className='rounded-full w-10'/>
           {groupChat.icon}  <span>{groupChat.name}</span>
         </div>
