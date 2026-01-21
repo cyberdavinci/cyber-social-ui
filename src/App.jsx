@@ -1,27 +1,15 @@
-import React from "react";
-
-import "./App.css";
-import NavBar from "./components/nav-bar";
-import SideBar from "./components/side-bar";
-import Feed from "./components/feed";
-import Aside from "./components/aside";
+import Hero from "./components/Hero";
 import Login from "./components/login";
+import { Routes, Route } from "react-router";
 
 function App() {
-  
-
   return (
     <main className=" bg-grey-900 h-screen w-full relative ">
       {/* overflow-y-hidden */}
-      <NavBar />
-      
-      <div className="flex gap-6 relative mt-32">
-        <SideBar />
-        <Feed />
-        <Aside />
-       
-      </div>
-       <Login/>
+      <Routes>
+         <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Hero />} />
+      </Routes>
     </main>
   );
 }
