@@ -11,7 +11,7 @@ import { Link } from "react-router";
 const GOOGLE_CLIENT_ID = "347541415893-mjgvspqnsi6com56jfsrcm2nf1ud8a9m.apps.googleusercontent.com";
 const FACEBOOK_APP_ID = "1243636141060539"
 
-function LogIn(){
+function Signin(){
 
 
 const [showPassword, setShowPassword] = useState(false);
@@ -25,13 +25,12 @@ const [showPassword, setShowPassword] = useState(false);
 
 <>
 
-<form  className="bg-white flex flex-col gap-3 w-[500px] h-[60vh] rounded-2xl "> 
+<form  className="bg-white flex flex-col gap-3 w-125 h-auto rounded-2xl m-auto mt-40 "> 
 <div className="m-5 flex flex-col gap-2 pl-2">
-<input type="email" name="email" id="" className= " bg-transparent pl-2 border-2 rounded outline-none focus:ring-0 focus:outline-none h-[6vh] " placeholder="Enter your email"/>
 
-{/* <input className=" bg-transparent border-2 pl-2 rounded outline-none focus:ring-0 focus:outline-none " type="password" name="password" id= "" placeholder="Create password" /> */}
+<input type="email" name="email" id="" className= " bg-transparent pl-2 border-2 rounded outline-none focus:ring-0 focus:outline-none h-10 " placeholder="Enter your email"/>
 
-<input type="text" name="text" id="" className=" bg-transparent border-2 pl-2 rounded outline-none focus:ring-0 focus:outline-none h-[6vh] "  placeholder="Create password" />
+<input type="text" name="text" id="" className=" bg-transparent border-2 pl-2 rounded outline-none focus:ring-0 focus:outline-none h-10 "  placeholder="Create password" />
 
 <div className="relative w-full">
       <input 
@@ -114,4 +113,4 @@ const [showPassword, setShowPassword] = useState(false);
 }
 
 
-export default LogIn;
+export default Signin;
