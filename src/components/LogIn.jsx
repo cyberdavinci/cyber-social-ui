@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { HiOutlineEye, HiOutlineEyeOff } from 'react-icons/hi';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import { FacebookProvider, Login } from 'react-facebook';
+import { Link } from "react-router";
 
 
 
@@ -49,8 +50,11 @@ const [showPassword, setShowPassword] = useState(false);
       </button>
     </div>
 
-
-<input className="bg-blue-500 rounded text-white font-semibold" type="submit" value="submit" placeholder="Sign in"/>
+<Link className="bg-blue-500 rounded text-white text-center font-semibold" to="/home">
+<button>
+  Submit
+</button>
+</Link>
 
 <p className="text-center">Already have an account? 
     <a href="" className="text-blue-600">Login</a>

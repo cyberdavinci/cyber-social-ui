@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
+import { BrowserRouter } from 'react-router'
 
 // createRoot(document.getElementById('root')).render(
 //   <StrictMode>
@@ -16,7 +17,9 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 const clientId = "347541415893-mjgvspqnsi6com56jfsrcm2nf1ud8a9m.apps.googleusercontent.com"; // Put your real ID here
 
 createRoot(document.getElementById('root')).render(
-  <GoogleOAuthProvider clientId={clientId}>
-    <App />
-  </GoogleOAuthProvider>
+  <BrowserRouter>
+    <GoogleOAuthProvider clientId={clientId}>
+      <App />
+    </GoogleOAuthProvider>
+  </BrowserRouter>
 );
