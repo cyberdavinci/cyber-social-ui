@@ -1,5 +1,6 @@
 
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { HiOutlineEye, HiOutlineEyeOff } from 'react-icons/hi';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import { FacebookProvider, Login } from 'react-facebook';
@@ -13,19 +14,25 @@ const FACEBOOK_APP_ID = "1243636141060539"
 
 function Signin(){
 
+ const navigate = useNavigate();
+  const handleSuccess = (response, provider) => {
+    console.log(`${provider} login worked:`, response);
+    
+    navigate("/home"); 
+  };
+
+ 
 
 const [showPassword, setShowPassword] = useState(false);
-
-
 
 
     return(
 
 
 
-<div className="h-screen flex items-center justify-center">
+<div className="bg-white h-screen flex items-center justify-center">
 
-<form  className="bg-white flex flex-col gap-3 w-125 h-auto rounded-2xl m-auto "> 
+<form  className="bg-white flex flex-col gap-3 w-125 h-auto  m-auto rounded-lg shadow-2xl"> 
 <div className="m-5 flex flex-col gap-2 pl-2">
 
 <input type="email" name="email" id="" className= " bg-transparent pl-2 border-2 rounded outline-none focus:ring-0 focus:outline-none h-10 " placeholder="Enter your email"/>
@@ -45,7 +52,7 @@ const [showPassword, setShowPassword] = useState(false);
         onClick={() => setShowPassword(!showPassword)}
         className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
       >
-        {showPassword ? <HiOutlineEyeOff size={20} /> : <HiOutlineEye size={20} />}
+        {showPassword ? <HiOutlineEye size={20} /> : <HiOutlineEyeOff size={20} />}
       </button>
     </div>
 
@@ -72,12 +79,11 @@ const [showPassword, setShowPassword] = useState(false);
 {/* login with facebook */}
 
 <div>
-   <FacebookProvider appId={1243636141060539}>
+   <FacebookProvider appId={'1243636141060539'}>
   <Login
-    onSuccess={(response) => console.log(response)}
-    onError={(error) => console.log(error)}
+    onSuccess={(res) => handleSuccess(res, "Facebook")}
+    onError={(error) => console.log(error)}>
 
-  >
     {({ onClick, isLoading }) => (
       <button 
         type="button" 
@@ -96,7 +102,7 @@ const [showPassword, setShowPassword] = useState(false);
 <div  className="">
    <GoogleOAuthProvider clientId="347541415893-mjgvspqnsi6com56jfsrcm2nf1ud8a9m.apps.googleusercontent.com">
       <GoogleLogin
-        onSuccess={credentialResponse => console.log(credentialResponse)}
+       onSuccess={(res) => handleSuccess(res, "Google")}
         onError={() => console.log('Login Failed')}
       />
     </GoogleOAuthProvider>

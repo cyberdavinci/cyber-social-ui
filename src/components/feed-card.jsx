@@ -64,7 +64,7 @@ const toggleLike = () => {
                 <CardTitle className="text-lg font-semibold">
                   John Doe
                 </CardTitle>
-                <div className="w-[5px] h-[5px] rounded-full bg-amber-50"></div>
+                <div className="w-1.25 h-1.25 rounded-full bg-amber-50"></div>
                 <Button
                   variant={"link"}
                   className=" text-blue-500 cursor-pointer font-semibold w-fit p-0 m-0 h-auto "
@@ -111,7 +111,7 @@ const toggleLike = () => {
             <img
               src={cardImages[0]}
               alt="Post image"
-              className="w-full h-auto max-h-[600px] object-cover"
+              className="w-full h-auto max-h-150 object-cover"
             />
           </div>
         )}
@@ -124,7 +124,7 @@ const toggleLike = () => {
                 key={index}
                 src={image}
                 alt={`Post image ${index + 1}`}
-                className="w-full h-[300px] object-cover"
+                className="w-full h-75 object-cover"
               />
             ))}
           </div>
@@ -159,7 +159,7 @@ const toggleLike = () => {
                 key={index}
                 src={image}
                 alt={`Post image ${index + 1}`}
-                className="w-full h-[200px] object-cover"
+                className="w-full h-50 object-cover"
               />
             ))}
           </div>
@@ -173,7 +173,7 @@ const toggleLike = () => {
                 <img
                   src={image}
                   alt={`Post image ${index + 1}`}
-                  className="w-full h-[200px] object-cover"
+                  className="w-full h-50 object-cover"
                 />
                 {index === 3 && cardImages.length > 4 && (
                   <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center">
