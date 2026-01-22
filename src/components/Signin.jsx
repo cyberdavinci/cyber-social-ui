@@ -23,9 +23,9 @@ const [showPassword, setShowPassword] = useState(false);
 
 
 
-<>
+<div className="h-screen flex items-center justify-center">
 
-<form  className="bg-white flex flex-col gap-3 w-125 h-auto rounded-2xl m-auto mt-40 "> 
+<form  className="bg-white flex flex-col gap-3 w-125 h-auto rounded-2xl m-auto "> 
 <div className="m-5 flex flex-col gap-2 pl-2">
 
 <input type="email" name="email" id="" className= " bg-transparent pl-2 border-2 rounded outline-none focus:ring-0 focus:outline-none h-10 " placeholder="Enter your email"/>
@@ -56,7 +56,7 @@ const [showPassword, setShowPassword] = useState(false);
 </Link>
 
 <p className="text-center">Already have an account? 
-    <a href="" className="text-blue-600">Login</a>
+    <Link className="text-blue-600" to="/login">Login</Link>
     
     </p>
 
@@ -108,7 +108,7 @@ const [showPassword, setShowPassword] = useState(false);
 
 </form>
 
-</>
+</div>
     )
 }
 
