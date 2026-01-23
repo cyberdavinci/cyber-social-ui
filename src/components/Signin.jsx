@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import { HiOutlineEye, HiOutlineEyeOff } from 'react-icons/hi';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import { FacebookProvider, Login } from 'react-facebook';
