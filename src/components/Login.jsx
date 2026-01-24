@@ -1,12 +1,31 @@
-import React, { useState } from 'react';
-import { Link } from "react-router";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router";
+import { toast } from "react-toastify";
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const router = useNavigate();
+  let passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+  let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-//   const handleLogin = () => {
-//     console.log('Login attempted with:', { email, password });
-//   };
+  const handleLogin = () => {
+    console.log("Login attempted with:", { email, password });
+
+    if (email === "ebrimaa@gmail.com" && password === "12345") {
+      router("/home");
+    }
+    // if (passwordRegex.test(password) === false) {
+    //   toast.error("Please enter a valid email address");
+    //   return;
+    // }
+    // if (emailRegex.test(email) === false) {
+    //   toast.error(
+    //     "Password must be at least 8 characters long and contain both letters and numbers",
+    //   );
+    //   return;
+    // }
+    // toast.error("Invalid email or password");
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-white to-gray-100">
@@ -43,11 +62,14 @@ const Login = () => {
                   className="w-full px-4 py-3 mb-3 border border-gray-300 rounded-md text-base focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
                 />
 
-                <Link  to="/home">
-                  <button  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md text-xl mt-4 transition-colors">
-                    Log In
-                  </button>
-                  </Link>
+                {/* <Link to="/home"> */}
+                <button
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md text-xl mt-4 transition-colors"
+                  onClick={handleLogin}
+                >
+                  Log In
+                </button>
+                {/* </Link> */}
 
                 <div className="text-center mb-4">
                   <a href="#" className="text-blue-600 text-sm hover:underline">
@@ -56,9 +78,7 @@ const Login = () => {
                 </div>
                 <div className="border-t border-gray-300 my-5"></div>
                 <div className="text-center pb-4">
-                  <button
-                    className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-md text-lg transition-colors"
-                  >
+                  <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-md text-lg transition-colors">
                     Create new account
                   </button>
                 </div>
@@ -69,6 +89,6 @@ const Login = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Login;

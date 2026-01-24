@@ -200,6 +200,7 @@ button:focus-visible {
 /* For Firefox */
 body {
   scrollbar-width: none; /* Hides the scrollbar */
+  overflow: hidden;
 }
 
 /* For Internet Explorer and Edge */
